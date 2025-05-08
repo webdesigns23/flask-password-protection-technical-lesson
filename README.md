@@ -138,6 +138,8 @@ from config import db, bcrypt
 
 #### Step 3: Create `_password_hash` Property
 
+Create a property to store passwords in the database after being hashed.
+
 ```python
 class User(db.Model):
     __tablename__ = 'users'
@@ -173,7 +175,7 @@ class User:
 
 #### Step 5: Use Bcrypt to Hash the Password
 
-In the User model, use `brcypt.generate_password_hash` to set the property.
+In the User model, use `bcrypt.generate_password_hash` to set the property.
 
 ```python
 # Build method to set password hash property using bcrypt.generate_password_hash()
@@ -186,7 +188,7 @@ def password_hash(self, password):
 
 #### Step 6: Use Bcrypt to Authenticate a User
 
-In the User model, use `brcypt.check_password_hash` to verify a user's password.
+In the User model, use `bcrypt.check_password_hash` to verify a user's password.
 
 ```python
 # Build authenticate method that uses bcrypt.check_password_hash()
