@@ -197,8 +197,6 @@ def authenticate(self, password):
         self._password_hash, password.encode('utf-8'))
 ```
 
-Once you have all methods created, commit your code.
-
 #### Step 7: Test New Methods in `flask shell`
 
 Let's test the new methods we created. First, let's create, migrate, and update our database:
@@ -232,9 +230,11 @@ False
 ```
 
 Feel free to try creating more users if you wish. You should verify:
-* calling .password_hash (getter) on a user results in an error
-* users can be successfully saved to the database
-* the authenticate method returns True if the password is correct and False if not.
+* Calling `.password_hash` (getter) on a user results in an error.
+* Users can be successfully saved to the database.
+* The authenticate method returns True if the password is correct and False if not.
+
+Once you have all methods created and tested, commit your code.
 
 #### Step 8: Add Passwords to User Accounts in Signup
 
