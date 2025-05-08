@@ -58,20 +58,17 @@ We need to create a secure login system on the backend for the frontend team to 
 We need to implement a way for users to sign up, log in, and log out with secure
 passwords.
 
-We will create methods using bycrpt in our user model to:
+We will create methods using bcrypt in our user model to:
 - hash passwords and store them in the database
 - protect the hashed_password property
-- authenticate a user by their username and password.
+- authenticate a user by their username and password
 
-Then we'll use those methods in our login and signup endpoints to create and login users securely.
-
-- Add methods to the User model to protect and set the password_hash property and
-  authenticate a user with their password.
+Then we'll use those methods in our login and signup endpoints to create and log in users securely.
 
 #### Note on Configuration
 
 Take note of the new `config.py` file in the `server/` directory. As our app is
-getting more and more complex, setting up the a config file can help clean up our
+getting more and more complex, setting up a config file can help clean up our
 code a bit.
 
 In each of our applications so far, `app.py` needed to import from `models.py`
@@ -437,7 +434,7 @@ If you created a separate feature branch, remember to open a PR on main and merg
 
 ### Task 4: Document and Maintain
 
-Optional Best Practice documentation steps:
+Best Practice documentation steps:
 * Add comments to the code to explain purpose and logic, clarifying intent and 
 functionality of your code to other developers.
 * Update README text to reflect the functionality of the application following 
