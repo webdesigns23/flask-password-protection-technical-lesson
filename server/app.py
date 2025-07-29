@@ -22,6 +22,10 @@ class Signup(Resource):
         user = User(
             username=json['username']
         )
+
+         # Use the .password_hash setter to hash and set password
+        user.password_hash = json['password']
+
         db.session.add(user)
         db.session.commit()
         return UserSchema().dump(user), 201
@@ -45,7 +49,8 @@ class Login(Resource):
 
         user = User.query.filter(User.username == username).first()
 
-        if user:
+        # Add password verification using the new .authenticate() method
+        if user and user.authenticate(password):
             session['user_id'] = user.id
             return UserSchema().dump(user), 200
 
